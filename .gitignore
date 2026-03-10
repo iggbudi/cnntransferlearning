@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Local outputs and caches
+outputs/
+
+# Dataset folder is local-only
+_DATASET/
+
+# Large local datasets and archives
+*.zip
+*.csv
+
+# Ignore packaged archives inside dataset folders as well
+_DATASET/**/*.zip
