@@ -7,9 +7,6 @@ __pycache__/
 venv/
 env/
 
-# Local outputs and caches
-outputs/
-
 # Dataset folder is local-only
 _DATASET/
 

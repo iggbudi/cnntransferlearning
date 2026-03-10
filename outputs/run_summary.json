@@ -1,0 +1,31 @@
+{
+  "selected_classes": [
+    "motif-batik-bali",
+    "motif-batik-betawi",
+    "motif-batik-cendrawasih",
+    "motif-batik-garutan",
+    "motif-batik-gentongan",
+    "motif-batik-kawung",
+    "motif-batik-megamendung",
+    "motif-batik-priangan",
+    "motif-batik-sekar",
+    "motif-batik-semarangan",
+    "motif-batik-sogan",
+    "motif-batik-tambal",
+    "motif-batik-truntum",
+    "motif_batik_tanjungbumi"
+  ],
+  "num_selected_classes": 14,
+  "num_train": 515,
+  "num_val": 64,
+  "num_test": 65,
+  "test_loss": 1.8748904466629028,
+  "test_accuracy": 0.4307692348957062,
+  "macro_f1": 0.4164656771799629,
+  "weighted_f1": 0.4038861138861139,
+  "tflite_models": {
+    "dynamic": "outputs\\models\\model_dynamic.tflite",
+    "float16": "outputs\\models\\model_float16.tflite",
+    "int8": "outputs\\models\\model_int8.tflite"
+  }
+}
