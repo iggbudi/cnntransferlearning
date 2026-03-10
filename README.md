@@ -2,7 +2,7 @@
 
 Project ini berisi pipeline klasifikasi citra motif batik menggunakan transfer learning berbasis CNN, kemudian model akhir dikonversi ke TensorFlow Lite untuk inferensi yang lebih ringan. Fokus utamanya adalah membangun alur end-to-end: audit dataset, pembersihan data, pemilihan kelas, training, evaluasi, konversi model, dan benchmarking artefak TFLite.
 
-Repository ini saat ini menyimpan kode pipeline dan artefak hasil eksperimen. Folder dataset mentah `_DATASET/` sengaja tidak diunggah ke GitHub karena ukurannya besar dan hanya dipakai secara lokal.
+Repository ini menyimpan kode pipeline dan artefak hasil eksperimen. Dataset yang dipakai pada project ini berasal dari Kaggle, yaitu `dwibudisantoso/batik-wastra-nusantara`. Folder `_DATASET/` hanya digunakan bila pipeline dijalankan secara lokal dan tidak diunggah ke GitHub.
 
 ## Ringkasan Project
 
@@ -12,8 +12,8 @@ Repository ini saat ini menyimpan kode pipeline dan artefak hasil eksperimen. Fo
 - Framework: TensorFlow / Keras.
 - Output akhir: model `.keras`, `SavedModel`, dan beberapa model `.tflite`.
 - Varian eksekusi:
-  - `batik_tflite_pipeline.py`: versi lokal dengan sumber data dari folder `_DATASET/`.
-  - `batik_tflite_colab.py`: versi Google Colab dengan unduhan dataset dari Kaggle.
+  - `batik_tflite_pipeline.py`: versi lokal yang membaca salinan dataset Kaggle dari folder lokal.
+  - `batik_tflite_colab.py`: versi Google Colab yang mengunduh dataset langsung dari Kaggle.
 
 ## Latar Belakang
 
@@ -43,9 +43,11 @@ Motif batik memiliki pola visual yang kaya dan sering kali mirip satu sama lain.
 
 ## Dataset
 
-Versi lokal pipeline mengasumsikan dataset berada di folder `_DATASET/`, dengan setiap subfolder mewakili satu kelas motif batik. Versi Colab menggunakan dataset Kaggle:
+Dataset yang digunakan pada project ini adalah dataset Kaggle:
 
 - `dwibudisantoso/batik-wastra-nusantara`
+
+Pada versi lokal, dataset Kaggle tersebut diasumsikan sudah disalin ke folder `_DATASET/`, dengan setiap subfolder mewakili satu kelas motif batik.
 
 Pada pipeline ini, kelas dipilih menggunakan filter jumlah gambar:
 
@@ -179,7 +181,7 @@ Artefak ini berguna untuk laporan penelitian, dokumentasi eksperimen, dan evalua
 
 ### 1. Menjalankan versi lokal
 
-Pastikan dataset tersedia di folder `_DATASET/`, lalu install dependensi Python yang relevan, misalnya:
+Pastikan dataset Kaggle `dwibudisantoso/batik-wastra-nusantara` sudah tersedia secara lokal di folder `_DATASET/`, lalu install dependensi Python yang relevan, misalnya:
 
 ```bash
 pip install tensorflow pandas numpy matplotlib seaborn pillow scikit-learn
@@ -199,7 +201,7 @@ Gunakan file:
 batik_tflite_colab.py
 ```
 
-Script ini sudah menyiapkan instalasi package tambahan yang dibutuhkan di Colab dan akan mencoba mengunduh dataset dari Kaggle.
+Script ini sudah menyiapkan instalasi package tambahan yang dibutuhkan di Colab dan akan mengunduh dataset `dwibudisantoso/batik-wastra-nusantara` dari Kaggle.
 
 ## Kegunaan Project
 
@@ -216,7 +218,7 @@ Project ini cocok dijadikan dasar untuk:
 - akurasi keseluruhan masih moderat, belum cukup untuk deployment produksi tanpa iterasi lanjutan
 - beberapa kelas masih sulit dibedakan
 - jumlah sampel per kelas relatif kecil
-- dataset mentah tidak ikut repository, sehingga reproduksi lokal memerlukan data source terpisah
+- dataset mentah tidak ikut repository, sehingga reproduksi lokal tetap memerlukan unduhan dataset Kaggle secara terpisah
 
 ## Pengembangan Lanjutan
 
@@ -238,4 +240,4 @@ Repository GitHub ini menyimpan:
 - model hasil training
 - dokumentasi project
 
-Folder `_DATASET/` tidak diunggah agar repository tetap lebih ringan dan fokus pada artefak yang relevan untuk studi, evaluasi, dan reproduksi pipeline.
+Folder `_DATASET/` tidak diunggah agar repository tetap lebih ringan. Untuk reproduksi, gunakan dataset Kaggle `dwibudisantoso/batik-wastra-nusantara`, lalu tempatkan salinannya secara lokal jika ingin menjalankan versi offline.
